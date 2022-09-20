@@ -16,6 +16,11 @@ function countDown(){
     let minutes = Math.floor(time/60);
     let second = time % 60;
     second = second < 10 ?'0'+ second : second;
-    time--;
-    timer.innerHTML = `${timeMinute}:${second} `;
+    if(minutes<=0 && second <=0){
+        timer.innerHTML = "The time is up";
+    }else{
+        time--;
+        timer.innerHTML = `${minutes}:${second} `;
+    }
+    
 }
