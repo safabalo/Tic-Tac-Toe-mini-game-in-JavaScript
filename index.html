@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/img/tic-tac.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body class="bg-yellow-400 flex flex-col items-center">
+    <header class="py-8 lg:py-11 flex w-2/4 justify-evenly">
+        <h1 class="ml-40" id="countdown">10:00</h1>
+        <button class="bg-sky-400 border-sky-400 px-8 py-0.5" id="start" onclick="counter(), reset()">Start</button>
+    </header>
+    <main class="grid grid-cols-3 grid-row-3 w-2/4 bg-red-200 m-auto">
+        <div class="bg-green-300 text-center p-3 md:p-3 md:p-10">X</div>
+        <div class="text-center border-x-4 border-blue-900 p-3 md:p-10">O</div>
+        <div class="text-center p-3 md:p-10">X</div>
+        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10">X</div>
+        <div class="text-center border-4 border-blue-900 p-3 md:p-10">O</div>
+        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10">O</div>
+        <div class="text-center p-3 md:p-10">O</div>
+        <div class="text-center border-x-4 border-blue-900 p-3 md:p-10">X</div>
+        <div class="text-center p-3 md:p-10">X</div>
+    </main>
+    <footer class="pt-8 lg:py-11">
+        <h2>0 - 0</h2>
+    </footer>
+    <script src="./src/javaScript/game.js"></script>
+</body>
+</html>
