@@ -1,9 +1,4 @@
 /*Timer for the game */
-localStorage.clear();
-const timer = document.getElementById('countdown');
-const starter = document.getElementById('start');
-let timeMinute = 10;
-let time = timeMinute*60;
 const modal = document.getElementById('modal')
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
@@ -17,27 +12,6 @@ let circle = "<p class='w-full font-bold text-red-500 pt-5 text-5xl bg-green-400
 let circleTour;
 let a =[];
 let result = document.getElementById('one')
-// Pour le calcule de temps
-function counter(){
-    const setting = setInterval(function () {
-        countDown()
-    }, 500); 
-}
-function reset(){
-    clearInterval(setting);
-}
-function countDown(){
-    let minutes = Math.floor(time/60);
-    let second = time % 60;
-    second = second < 10 ?'0'+ second : second;
-    if(minutes<=0 && second <=0){
-        timer.innerHTML = "The time is up";
-    }else{
-        time--;
-        timer.innerHTML = `${minutes}:${second} `;
-    }
-    
-}
 // fun de fonction calcule de temps
 btn.addEventListener('click', function(){
     checkPlayers()
@@ -48,11 +22,7 @@ function checkPlayers(){
     if(!player1.value.match(p)||!player2.value.match(p)){
         player1.style.border = 'solid #FF0000';
         player2.style.border = 'solid #FF0000';
-        // const text = document.createTextNode('Hello world')
-        // const errMsg= document.createElement('p')
-        // let newG = errMsg.appendChild(text)
-        
-        // label = document.getElementById('first').appendChild(newG)
+
     }else{
         modal.style.display = "none";
     }
@@ -63,8 +33,8 @@ function storing(){
     localStorage.setItem('player1',player1.value);
 
     localStorage.setItem('player2',player2.value);
-    console.log(localStorage.getItem("player1"));
-    console.log(localStorage.getItem("player2"));
+    // console.log(localStorage.getItem("player1"));
+    // console.log(localStorage.getItem("player2"));
 }
 // Fonction pour l'affichage
 cells.forEach((cell, index ) => { 
