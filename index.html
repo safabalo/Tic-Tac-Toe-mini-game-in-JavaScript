@@ -9,20 +9,35 @@
     <title>Tic Tac Toe</title>
 </head>
 <body class="bg-yellow-400 flex flex-col items-center">
+    <div class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center" id="modal">
+        <div class="bg-white p-8 rounded ">
+            <div class="flex gap-x-8">
+                <div class="flex flex-col " id ='first'>
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-2 text-base">Joueur 1</span>
+                    <input type="text" id="player1" name="player1" class="border border-slate-300 rounded cursor-defaultd hover:border-green-500 px-6" placeholder="veuillez entrer votre nom">
+                </div>
+                <div id="second">
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 pb-2 text-base">Joueur 2</span>
+                    <input type="text" id="player2" name="player2" class="border border-slate-300 rounded cursor-default hover:border-green-500 px-6" placeholder="veuillez entrer votre nom">
+                </div>
+            </div>
+            <button class="text-white text-base font-semibold bg-red-500 py-1 px-6 mt-4 ml-48 cursor-default rounded hover:bg-white border-2 border-red-500 hover:text-red-500" id="start">start</button>
+        </div>
+    </div>
     <header class="py-8 lg:py-11 flex w-2/4 justify-evenly">
         <h1 class="ml-40" id="countdown">10:00</h1>
-        <button class="bg-sky-400 border-sky-400 px-8 py-0.5" id="start" onclick="counter(), reset()">Start</button>
+        <button class="bg-sky-400 border-sky-400 px-8 py-0.5" id="start" onclick="counter(),reset()">Start</button>
     </header>
-    <main class="grid grid-cols-3 grid-row-3 w-2/4 bg-red-200 m-auto cell">
-        <div class="bg-green-300 text-center p-3 md:p-3 md:p-10 cell"></div>
+    <main class="grid grid-cols-3 grid-row-3 w-2/4 bg-red-200 m-auto cells">
+        <div class="bg-green-300 text-center p-3 md:p-3 md:p-10 cells"></div>
         <div class="text-center border-x-4 border-blue-900 p-3 md:p-10 cell"></div>
-        <div class="text-center p-3 md:p-10 cell"></div>
-        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10 cell"></div>
-        <div class="text-center border-4 border-blue-900 p-3 md:p-10 cell"></div>
-        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10 cell"></div>
-        <div class="text-center p-3 md:p-10 cell"></div>
-        <div class="text-center border-x-4 border-blue-900 p-3 md:p-10 cell"></div>
-        <div class="text-center p-3 md:p-10 cell"></div>
+        <div class="text-center p-3 md:p-10 cells"></div>
+        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10 cells"></div>
+        <div class="text-center border-4 border-blue-900 p-3 md:p-10 cells"></div>
+        <div class="text-center border-y-4 border-blue-900 p-3 md:p-10 cells"></div>
+        <div class="text-center p-3 md:p-10 cells"></div>
+        <div class="text-center border-x-4 border-blue-900 p-3 md:p-10 cells"></div>
+        <div class="text-center p-3 md:p-10 cells"></div>
     </main>
     <footer class="pt-8 lg:py-11">
         <h2>0 - 0</h2>
