@@ -1,23 +1,20 @@
 /*Timer for the game */
 localStorage.clear();
-clicked = false;
 const timer = document.getElementById('countdown');
 const starter = document.getElementById('start');
 let timeMinute = 10;
 let time = timeMinute*60;
-localStorage.clear();
 const modal = document.getElementById('modal')
 const player1 = document.getElementById('player1');
 const player2 = document.getElementById('player2');
 const btn = document.querySelector('#start');
-const cells = document.querySelectorAll('.cells');
-const circle = 'O';
-const x = 'X';
-let circleTour;
-let count= false;
+const cells = document.querySelectorAll('.cells')
 let arrx = [];
 let arrcircle = [];
 let p = /^[A-Za-z]+$/;
+let x = 'x';
+let circle = 'o';
+let circleTour;
 let a =[];
 // Pour le calcule de temps
 function counter(){
@@ -131,5 +128,3 @@ if(arrcircle.includes(0) && arrcircle.includes(1) && arrcircle.includes(2) || ar
     alert(localStorage.getItem('player2'))
 }
 }
-
-
