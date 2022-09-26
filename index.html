@@ -9,7 +9,6 @@
     <title>Tic Tac Toe</title>
 </head>
 <body class="bg-yellow-400 flex flex-col items-center">
-    <body>
         <div class="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center" id="modal">
             <div class="bg-white p-8 rounded ">
                 <div class="flex gap-x-8">
@@ -25,20 +24,29 @@
                 <button class="text-white text-base font-semibold bg-red-500 py-1 px-6 mt-4 ml-48 cursor-default rounded hover:bg-white border-2 border-red-500 hover:text-red-500" id="start">start</button>
             </div>
         </div>
-        <main class="grid grid-cols-3 grid-row-3 w-2/4 bg-red-200 m-auto cell mt-11">
-            <div class="text-center p-3 md:p-3 md:p-10 cells"></div>
-            <div class="text-center border-x-4  p-3 md:p-10 cells"></div>
-            <div class="text-center p-3 md:p-10 cells"></div>
-            <div class="text-center border-y-4  p-3 md:p-10 cells"></div>
-            <div class="text-center border-4  p-3 md:p-10 cells"></div>
-            <div class="text-center border-y-4  p-3 md:p-10 cells"></div>
-            <div class="text-center p-3 md:p-10 cells"></div>
-            <div class="text-center border-x-4  p-3 md:p-10 cells"></div>
-            <div class="text-center p-3 md:p-10 cells"></div>
+        <main class="flex flex-col mt-40">
+            <div class="flex">
+                <div class="text-center cells border-2 border-black" style="height: 100px; width: 100px;"></div>
+                <div class="text-center cells border-2 border-black mx-8" style="height: 100px; width: 100px;"></div>
+                <div class="text-center cells border-2 border-black" style="height: 100px; width: 100px;"></div>
+            </div>
+            <div class="flex">
+                <div class="text-center border-2 border-black cells my-8" style="height: 100px; width: 100px;"></div>
+                <div class="text-center border-2 border-black cells m-8" style="height: 100px; width: 100px;"></div>
+                <div class="text-center border-2 border-black cells my-8" style="height: 100px; width: 100px;"></div>
+            </div>
+            <div class="flex">
+                <div class="text-center cells border-2 border-black" style="height: 100px; width: 100px;"></div>
+                <div class="text-center border-2 border-black cells mx-8" style="height: 100px; width: 100px;"></div>
+                <div class="text-center cells border-2 border-black" style="height: 100px; width: 100px;"></div>
+            </div>
+            
         </main>
-        <div id="one">
-    
+        <div class="my-6 flex flex-col items-center justify-center">
+            <button onclick="reset()" class="text-white bg-violet-400  font-semibold text-xl px-4 py-1 rounded hover:bg-white border-2 border-violet-400 hover:text-violet-400 ">Répeter</button>
+            <p class="font-extrabold text-2xl" id="one"></p>
         </div>
+
     <script src="./src/javaScript/game.js"></script>
 </body>
 </html>

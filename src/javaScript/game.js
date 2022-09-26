@@ -12,10 +12,11 @@ const cells = document.querySelectorAll('.cells')
 let arrx = [];
 let arrcircle = [];
 let p = /^[A-Za-z]+$/;
-let x = 'x';
-let circle = 'o';
+let x ="<p class='font-bold text-5xl text-center pt-5 text-white bg-violet-400' style='width: 97px; height:97px'>X</p>";
+let circle = "<p class='w-full font-bold text-red-500 pt-5 text-5xl bg-green-400'style='width: 97px; height:97px'>O</p>";
 let circleTour;
 let a =[];
+let result = document.getElementById('one')
 // Pour le calcule de temps
 function counter(){
     const setting = setInterval(function () {
@@ -79,7 +80,7 @@ cells.forEach((cell, index ) => {
 });
 //Adding the X or O
 function marks(cell, currentClass){
-    cell.innerText = currentClass
+    cell.innerHTML = currentClass
     switchTurn()
     }
     // Checking the player
@@ -99,32 +100,31 @@ function markStoring(index,currentClass){
 }
 function checkWinner(){
     if(!winner()&& a.length==9){
-        alert("DRAW")
+        result.innerHTML= 'Match null!'
     }else{
         winner()
     }
 }
 function winner(){
   if(arrx.includes(0) && arrx.includes(1) && arrx.includes(2) || arrx.includes(3) && arrx.includes(4) && arrx.includes(5)){
-    alert('X')
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player1')
   }else if(arrx.includes(6) && arrx.includes(7) && arrx.includes(8) ||arrx.includes(0) && arrx.includes(3) && arrx.includes(6)){
-    alert('Winner')
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player1')
   }else if(arrx.includes(1) && arrx.includes(4) && arrx.includes(7) || arrx.includes(2) && arrx.includes(5) && arrx.includes(8)){
-    alert('Hello');
-    console.log(localStorage.getItem('player1'))
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player1')
   }else if(arrx.includes(0) && arrx.includes(4) && arrx.includes(8) || arrx.includes(2) && arrx.includes(4) && arrx.includes(6)){
-    // alert('Fati');
-    alert(localStorage.getItem('player1'))
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player1')
 }
 if(arrcircle.includes(0) && arrcircle.includes(1) && arrcircle.includes(2) || arrcircle.includes(3) && arrcircle.includes(4) && arrcircle.includes(5)){
-    alert('O')
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player2')
   }else if(arrcircle.includes(6) && arrcircle.includes(7) && arrcircle.includes(8) ||arrcircle.includes(0) && arrcircle.includes(3) && arrcircle.includes(6)){
-    alert('Winner O')
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player2')
   }else if(arrcircle.includes(1) && arrcircle.includes(4) && arrcircle.includes(7) || arrcircle.includes(2) && arrcircle.includes(5) && arrcircle.includes(8)){
-    alert(localStorage.getItem('player2'));
-    // console.log()
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player2')
   }else if(arrcircle.includes(0) && arrcircle.includes(4) && arrcircle.includes(8) || arrcircle.includes(2) && arrcircle.includes(4) && arrcircle.includes(6)){
-    // alert('Fati');
-    alert(localStorage.getItem('player2'))
+    result.innerHTML = 'Le ganiant est : ' + localStorage.getItem('player2')
 }
+}
+function reset(){
+    location.reload();
 }
